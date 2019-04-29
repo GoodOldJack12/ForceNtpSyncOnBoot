@@ -1,4 +1,4 @@
-﻿$Application_Name="ForceNtpSyncOnBoot"
+$Application_Name="ForceNtpSyncOnBoot"
 $Application_URL="http://www.github.com/GoodOldJack12/ForceNtpSyncOnBoot/archive/master.zip"
 $Startup_Script="SyncTimeOnBoot.ps1"
 
@@ -22,6 +22,8 @@ Expand-Archive $tempdownloadpath -DestinationPath $Application_Path -Force
 $finalStartScriptPath="$("$Startup_Folder_Path\$Application_Name").bat"
 Remove-Item $finalStartScriptPath -ErrorAction SilentlyContinue
 New-Item $finalStartScriptPath
-Add-Content $finalStartScriptPath 'PowerShell -Command "Set-ExecutionPolicy Unrestricted" >> "%TEMP%\StartupLog.txt" 2>&1' 
-Add-Content $finalStartScriptPath "PowerShell $(FindActualScriptPath) >> %TEMP%\StartupLog.txt 2>&1"
+Add-Content $finalStartScriptPath 'PowerShell -Command "Set-ExecutionPolicy -Scope CurrentUser Unrestricted" >> "%TEMP%\StartupLog.txt" 2>&1`n' 
+Add-Content $finalStartScriptPath "PowerShell "$(FindActualScriptPath)" >> %TEMP%\StartupLog.txt 2>&1"
+
+
 
