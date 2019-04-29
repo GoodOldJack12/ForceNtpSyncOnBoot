@@ -1,4 +1,4 @@
-﻿$Application_Name="MyTestApplication"
+﻿$Application_Name="ForceNtpSyncOnBoot"
 $Application_URL="http://www.github.com/GoodOldJack12/ForceNtpSyncOnBoot/archive/master.zip"
 $Startup_Script="SyncTimeOnBoot.ps1"
 
